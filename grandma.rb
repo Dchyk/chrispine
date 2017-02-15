@@ -1,17 +1,30 @@
 #deaf grandma
 
-while true
-  puts 'WHAT\'s THAT YOU SAY?'
+bycount = 0 # sets number of times BYE has been said
 
+puts 'GIVE US A KISS!'
+
+while true
+  
   input = gets.chomp
 
-  puts 'HUH?! SPEAK UP, SONNY!' 
+  if input != input.upcase
+    puts 'HUH?! SPEAK UP, SONNY!' 
+  else
+    puts 'NO, NOT SINCE ' + (rand(100) + 1900).to_s + '!'
+  end
+
 
   if input == 'BYE'
-    break
+    bycount += 1
+  else
+    bycount = 0
+  end
+
+  if bycount == 3
+    break    
   end
 end
 
-year = rand(100) + 1900
 
-puts 'NO, NOT SINCE ' + year.to_s + '!'
+
